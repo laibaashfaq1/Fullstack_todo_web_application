@@ -1,0 +1,21 @@
+from sqlmodel import create_engine, Session, SQLModel
+from dotenv import load_dotenv
+import os
+
+# Import all models so SQLModel can find them
+from app.models.task import Task
+from app.models.user import User
+
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+engine = create_engine(DATABASE_URL)
+
+def create_db_and_tables():
+    SQLModel.metadata.create_all(engine)
+
+def get_db():
+    with Session(engine) as session:
+        yield session
