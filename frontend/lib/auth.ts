@@ -1,5 +1,5 @@
 // frontend/lib/auth.ts
-'use client';
+// 'use client';
 
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
