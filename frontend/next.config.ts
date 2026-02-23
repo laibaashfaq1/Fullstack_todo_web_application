@@ -3,11 +3,10 @@
 const path = require('path');
 const nextConfig: import('next').NextConfig = {
   reactStrictMode: true,
-  // Add this if you have custom PostCSS
   experimental: {
     optimizePackageImports: ['tailwindcss'],
+    outputFileTracingRoot: path.join(__dirname, '../../'), // Explicitly set output file tracing root
   },
-  // Add turbopack configuration
   turbopack: {
     root: path.join(__dirname, '../../'),
   },
