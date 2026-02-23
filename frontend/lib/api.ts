@@ -1,7 +1,7 @@
 // lib/api.ts
 import { Task } from '../components/TaskCard';
 
-const API_URL = 'https://huggingface.co/spaces/Laiba0/Chatbot_Todo';
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const getTasks = async (token: string): Promise<Task[]> => {
   const response = await fetch(`${API_URL}/api/tasks`, {
