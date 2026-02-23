@@ -10,7 +10,7 @@ app = FastAPI()
 # CORS Middleware – Yeh code yahan add kar do (frontend se connect hone ke liye)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Tumhara frontend (Next.js) URL
+    allow_origins=["https://fullstack-todo-web-application.vercel.app"],  # Tumhara frontend (Next.js) URL
     allow_credentials=True,
     allow_methods=["*"],   # Sab HTTP methods allow (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],   # Sab headers allow (Authorization, Content-Type, etc.)
