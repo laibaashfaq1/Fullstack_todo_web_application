@@ -50,7 +50,7 @@ export function useLogout() {
         localStorage.removeItem('access_token');
         
         // Call logout endpoint to clear httponly cookie
-        fetch('http://localhost:8000/api/logout', {
+        fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/logout`, {
             method: 'POST',
             credentials: 'include',
         }).catch(err => {
@@ -67,7 +67,7 @@ export async function login(email: string, password: string): Promise<{ success:
     try {
         console.log("Attempting to log in with:", { email, password: '***' });
         
-        const response = await fetch(`http://localhost:8000/api/token`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/token`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -127,7 +127,7 @@ export async function signup(credentials: {
 
   try {
 
-      const response = await fetch(`http://localhost:8000/api/signup`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/signup`, {
 
           method: 'POST',
 
