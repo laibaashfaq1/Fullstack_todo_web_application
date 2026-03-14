@@ -1,15 +1,8 @@
-import path from "path";
+import type { NextConfig } from "next";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['tailwindcss'],
-  },
-
-  outputFileTracingRoot: path.join(__dirname, '../../'),
-
-  turbopack: {
-    root: path.join(__dirname, '../../'),
   },
 };
 
